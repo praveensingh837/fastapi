@@ -27,6 +27,6 @@ def create_incident(
     db_incident = Incident(**incident.model_dump())
     db.add(db_incident)
     db.commit()
-    db.refresh()
+    db.refresh(db_incident)
 
     return db_incident
